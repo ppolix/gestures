@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="border_letter_color">#64138C</color>
+    <color name="letter_selector_color">#F01EE8</color>
 </resources>

@@ -42,8 +42,8 @@ fun AnimatedGesture() {
             .pointerInput(Unit) {
                 detectDragGestures(
                     onDrag = { change: PointerInputChange, dragAmount: Offset ->
-                            offsetX += dragAmount.x
-                            offsetY += dragAmount.y
+                        offsetX += dragAmount.x
+                        offsetY += dragAmount.y
                         width += dragAmount.x.toDp()
                         height += dragAmount.y.toDp()
                         Log.e("DRAGGING", "DRAGGINS START")
