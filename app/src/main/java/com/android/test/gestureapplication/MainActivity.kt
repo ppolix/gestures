@@ -57,7 +57,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GameLettersGrid()
+//            GestureBox()
+            GameScreenSecondVersion()
         }
     }
 
@@ -65,120 +66,9 @@ class MainActivity : ComponentActivity() {
     fun GameLettersGrid() {
         GestureBox()
     }
-
-//            ConstraintLayout {
-//                val (image, grid) = createRefs()
-//                Image(
-//                    painter = painterResource(R.drawable.field_game_1),
-//                    contentDescription = null,
-//                    contentScale = ContentScale.Fit,
-//                    modifier = Modifier.constrainAs(image) {
-//                        start.linkTo(parent.start)
-//                        end.linkTo(parent.end)
-//                        bottom.linkTo(parent.bottom)
-//                    }
-//                )
-//
-//                LettersGrid(
-//                    modifier = Modifier
-//                        .constrainAs(grid) {
-//                            start.linkTo(image.start)
-//                            bottom.linkTo(image.bottom)
-//                            top.linkTo(image.top)
-//                        }
-//                        .padding(horizontal = 20.dp)
-//                )
-//            }
-//        }
 }
 
-//    @Composable
-//    fun LettersGrid(
-//        modifier: Modifier
-//    ) {
-//
-//        var selectedWord by remember {
-//            mutableStateOf("")
-//        }
-//        Box(
-//            modifier = Modifier.size(50.dp)
-//        ) {
-//
-//            LazyVerticalGrid(
-//                columns = GridCells.Fixed(6),
-//                modifier = modifier,
-//                verticalArrangement = Arrangement.spacedBy(1.dp)
-//            ) {
-//                items(letters) { item ->
-//                    LetterItem(
-//                        letter = item,
-//                        modifier = modifier,
-//                        selectedWord = selectedWord,
-//                        onWordSelected = { selectedWord = it }
-//                    )
-//                }
-//            }
-//        }
-//    }
+@Composable
+fun CustomLazyGrid() {
 
-
-//        Image(
-//            modifier = Modifier
-//                .offset { IntOffset(offsetX.roundToInt(), offsetY.roundToInt()) }
-//                .pointerInput(Unit) {
-//                    detectDragGestures(
-//                        onDragStart = {
-//                            visible = true
-//                            isSelected = true
-//                            Log.e("DRAG STARTED", "START")
-//                        },
-//                        onDrag = { change, dragAmount ->
-//                            change.consume()
-//                            offsetY += dragAmount.y
-//                            Log.e("DRAG VERTICALLY", "DRAGGGING")
-//
-//                            offsetX += dragAmount.x
-//                            Log.e("DRAG HORIZONTALLY", "DRAGGGING")
-//                        },
-//                        onDragEnd = {
-//                            isSelected = false
-//                            Log.e("DRAG STARTED", "START")
-//                        }
-//                    )
-//                }
-//                .height(90.dp)
-//                .alpha(50F)
-//                .clip(RoundedCornerShape(7.dp)),
-//            contentScale = ContentScale.FillBounds,
-//            painter = painterResource(id = R.drawable.backlight_word),
-//            contentDescription = null
-//        )
-
-
-//      Box(
-//        modifier = modifier.size(50.dp),
-//        contentAlignment = Alignment.Center
-//    ) {
-//        Text(
-//            text = letter,
-//            style = LocalTextStyle.current.merge(
-//                TextStyle(
-//                    color = Color.White,
-//                    fontSize = 30.sp,
-//                    fontFamily = FontFamily(Font(R.font.titan_one_regular))
-//                )
-//            )
-//        )
-//        Text(
-//            text = letter,
-//            style = LocalTextStyle.current.merge(
-//                TextStyle(
-//                    color = colorResource(id = R.color.border_letter_color),
-//                    fontSize = 30.sp,
-//                    drawStyle = Stroke(width = 3f, join = StrokeJoin.Round),
-//                    fontFamily = FontFamily(Font(R.font.titan_one_regular))
-//                )
-//            )
-//        )
-//    }
-//}
+}
