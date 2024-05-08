@@ -122,7 +122,7 @@ fun updateSelectedWord(offsetX: Float, offsetY: Float, width: Float, height: Flo
 
 
         if (rectLeft < letterRight && rectRight > letterLeft && rectTop < letterBottom && rectBottom > letterTop) {
-            selectedLetters.add(letter)
+            selectedLetters.add(letter.toString())
         }
     }
     selectedLettersList = selectedLetters
@@ -131,7 +131,7 @@ fun updateSelectedWord(offsetX: Float, offsetY: Float, width: Float, height: Flo
 
 @Composable
 fun Letter(
-    letter: String,
+    letter: Char,
     modifier: Modifier,
     selectedWord: String,
     onWordSelected: (String) -> Unit,
@@ -148,7 +148,7 @@ fun Letter(
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = letter,
+            text = letter.toString(),
             style = LocalTextStyle.current.merge(
                 TextStyle(
                     color = Color.White,
@@ -158,7 +158,7 @@ fun Letter(
             )
         )
         Text(
-            text = letter,
+            text = letter.toString(),
             style = LocalTextStyle.current.merge(
                 TextStyle(
                     color = colorResource(id = R.color.border_letter_color),

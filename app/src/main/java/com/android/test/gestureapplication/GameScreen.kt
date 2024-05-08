@@ -60,7 +60,7 @@ fun GestureBox() {
         ) {
 
             items(letters) { item ->
-                LetterItem(
+                GameScreenLetterItem(
                     letter = item,
                     modifier = Modifier,
                     selectedWord = selectedWord,
@@ -97,8 +97,8 @@ fun GestureBox() {
 }
 
 @Composable
-fun LetterItem(
-    letter: String,
+fun GameScreenLetterItem(
+    letter: Char,
     modifier: Modifier,
     selectedWord: String,
     onWordSelected: (String) -> Unit
@@ -108,7 +108,7 @@ fun LetterItem(
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = letter,
+            text = letter.toString(),
             style = LocalTextStyle.current.merge(
                 TextStyle(
                     color = Color.White,
@@ -118,7 +118,7 @@ fun LetterItem(
             )
         )
         Text(
-            text = letter,
+            text = letter.toString(),
             style = LocalTextStyle.current.merge(
                 TextStyle(
                     color = colorResource(id = R.color.border_letter_color),
