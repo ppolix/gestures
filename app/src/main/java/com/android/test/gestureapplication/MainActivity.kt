@@ -3,8 +3,11 @@ package com.android.test.gestureapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import com.android.test.gestureapplication.state.MainViewModel
 
 val letters = listOf(
     'A', 'B', 'C', 'D', 'E', 'F',
@@ -18,18 +21,22 @@ data class Item(
     val character: Char,
     val isSelected: Boolean,
     val isFirst: Boolean,
-    val color: Color
 )
 
 class MainActivity : ComponentActivity() {
 
+    private val viewModel by viewModels<MainViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            SimpleMovingDetector()
+            val state by viewModel.state.collectAsState()
+
+//            SimpleMovingDetector()
 //            GestureBox()
 //            GameScreenSecondVersion()
 //            GameScreenThirdVersion()
+//            GameScreenFourthV(viewModel::onEvent, state = state)
+            ScreenGame(uiState = state)
         }
     }
 
