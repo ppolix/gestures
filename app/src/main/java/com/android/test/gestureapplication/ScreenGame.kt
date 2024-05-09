@@ -74,7 +74,6 @@ fun ScreenGame(
                             state = STATE_DOWN
                             currentPos = Offset(it.x, it.y)
                         }
-
                         MotionEvent.ACTION_MOVE -> {
                             state = STATE_MOVE
                             currentPos = Offset(it.x, it.y)
